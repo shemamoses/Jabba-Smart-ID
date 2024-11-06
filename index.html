@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jabaa Smart ID</title>
+    <!-- Latest Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for Icons -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="d-flex vh-100">
+      <!-- Sidebar -->
+      <div class="sidebar d-flex flex-column">
+        <h2>Jabaa Smart ID</h2>
+        <ul class="nav flex-column mb-auto">
+          <li class="nav-item mb-2">
+            <a class="nav-link active" href="#">
+              <i class="fas fa-plus-circle"></i> Add
+            </a>
+          </li>
+          <li class="nav-item mb-2">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="manageDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="fas fa-tasks"></i> Manage
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="manageDropdown">
+              <li>
+                <a class="dropdown-item" href="#"
+                  ><i class="fas fa-trash-alt"></i> Delete</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"
+                  ><i class="fas fa-edit"></i> Update</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item mb-2">
+            <a class="nav-link" href="#">
+              <i class="fas fa-chart-line"></i> Report
+            </a>
+          </li>
+        </ul>
+
+        <!-- Profile section with drop-up menu -->
+        <div class="profile mt-auto d-flex align-items-center">
+          <img
+            src="https://via.placeholder.com/40"
+            alt="Profile Picture"
+            class="rounded-circle me-2"
+          />
+          <span>User Name</span>
+          <div class="dropup ms-auto">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              id="profileDropdown"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="fas fa-user"></i>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+              <li>
+                <a class="dropdown-item" href="#"
+                  ><i class="fas fa-sign-in-alt"></i> Sign In</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"
+                  ><i class="fas fa-sign-out-alt"></i> Sign Out</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"
+                  ><i class="fas fa-key"></i> Reset Password</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main content -->
+      <div class="container-fluid p-4" id="main-content">
+        <h1>Welcome to Jabaa Smart ID Dashboard</h1>
+        <p>Select an option from the sidebar to get started.</p>
+
+        <!-- Search and Table -->
+        <div class="table-responsive mt-4">
+          <input
+            type="text"
+            id="searchInput"
+            class="form-control mb-3"
+            placeholder="Search..."
+          />
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Department</th>
+                <th>Email</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody">
+              <tr>
+                <td>John Doe</td>
+                <td>Developer</td>
+                <td>Engineering</td>
+                <td>johndoe@example.com</td>
+              </tr>
+              <tr>
+                <td>Jane Smith</td>
+                <td>Designer</td>
+                <td>Design</td>
+                <td>janesmith@example.com</td>
+              </tr>
+              <tr>
+                <td>Emily Johnson</td>
+                <td>Product Manager</td>
+                <td>Product</td>
+                <td>emilyj@example.com</td>
+              </tr>
+              <tr>
+                <td>Michael Brown</td>
+                <td>Sales Manager</td>
+                <td>Sales</td>
+                <td>michaelb@example.com</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- User Statistics Chart -->
+    <div class="mt-5">
+      <h3>User Statistics</h3>
+      <div class="chart-container">
+          <canvas id="userChart"></canvas>
+      </div>
+  </div>
+</div>
+
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle-btn" onclick="toggleTheme()">
+      <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
