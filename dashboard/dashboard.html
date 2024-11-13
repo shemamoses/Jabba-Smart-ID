@@ -14,10 +14,13 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
       rel="stylesheet"
     />
-    <!-- Chart.js Library -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- DataTables CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css"
+    />
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="dashboard.css" />
   </head>
   <body>
     <div class="d-flex vh-100">
@@ -105,15 +108,9 @@
         <h1>Welcome to Jabaa Smart ID Dashboard</h1>
         <p>Select an option from the sidebar to get started.</p>
 
-        <!-- Search and Table -->
+        <!-- DataTable -->
         <div class="table-responsive mt-4">
-          <input
-            type="text"
-            id="searchInput"
-            class="form-control mb-3"
-            placeholder="Search..."
-          />
-          <table class="table table-striped table-hover">
+          <table id="dataTable" class="table table-striped table-hover">
             <thead>
               <tr>
                 <th>Name</th>
@@ -122,7 +119,7 @@
                 <th>Email</th>
               </tr>
             </thead>
-            <tbody id="tableBody">
+            <tbody>
               <tr>
                 <td>John Doe</td>
                 <td>Developer</td>
@@ -152,13 +149,14 @@
         </div>
 
         <!-- User Statistics Chart -->
-    <div class="mt-5">
-      <h3>User Statistics</h3>
-      <div class="chart-container">
-          <canvas id="userChart"></canvas>
+        <div class="mt-5">
+          <h3>User Statistics</h3>
+          <div class="chart-container">
+            <canvas id="userChart"></canvas>
+          </div>
+        </div>
       </div>
-  </div>
-</div>
+    </div>
 
     <!-- Theme Toggle Button -->
     <button class="theme-toggle-btn" onclick="toggleTheme()">
@@ -167,6 +165,13 @@
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+    <!-- jQuery for DataTables -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- DataTables JavaScript -->
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+    <!-- Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="dashboard.js"></script>
   </body>
 </html>
