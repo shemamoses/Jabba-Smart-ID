@@ -19,17 +19,78 @@
   </head>
   <body>
     <!-- Sidebar and other components -->
-    <div class="d-flex">
+    <div class="d-flex vh-100">
       <!-- Sidebar -->
-      <div class="sidebar">
-        <h4>Jabaa Smart ID</h4>
-        <ul class="list-group">
-          <li class="list-group-item active"><a href="#">Add Citizen</a></li>
-          <li class="list-group-item"><a href="#">Manage Citizens</a></li>
-          <li class="list-group-item"><a href="#">Reports</a></li>
+      <div class="sidebar d-flex flex-column">
+        <h2>Jabaa Smart ID</h2>
+        <ul class="nav flex-column mb-auto">
+          <li class="nav-item mb-2">
+            <a class="nav-link active" href="#">
+              <i class="fas fa-plus-circle"></i> Add
+            </a>
+          </li>
+          <li class="nav-item mb-2">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="manageDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="fas fa-tasks"></i> Manage
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="manageDropdown">
+              <li>
+                <a class="dropdown-item" href="#"
+                  ><i class="fas fa-trash-alt"></i> Delete</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"
+                  ><i class="fas fa-edit"></i> Update</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item mb-2">
+            <a class="nav-link" href="#">
+              <i class="fas fa-chart-line"></i> Report
+            </a>
+          </li>
         </ul>
-        <div class="profile-section">
-          <button class="btn btn-info">Profile</button>
+
+        <!-- Profile section with drop-up menu -->
+        <div class="profile mt-auto d-flex align-items-center">
+          <img
+            src="https://via.placeholder.com/40"
+            alt="Profile Picture"
+            class="rounded-circle me-2"
+          />
+          <span>User</span>
+          <div class="dropup ms-auto">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              id="profileDropdown"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="fas fa-user"></i>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+              <li>
+                <a class="dropdown-item" href="#"
+                  ><i class="fas fa-sign-out-alt"></i> Sign Out</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"
+                  ><i class="fas fa-key"></i> Reset Password</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 
