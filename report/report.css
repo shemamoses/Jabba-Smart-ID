@@ -1,0 +1,62 @@
+/* Global Styles */
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  background-color: #343a40;
+  color: white;
+  height: 100vh;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+}
+
+.sidebar h4 {
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sidebar .list-group-item {
+  background-color: #343a40;
+  color: white;
+  border: none;
+}
+
+.sidebar .list-group-item.active {
+  background-color: #007bff;
+}
+
+.sidebar .list-group-item a {
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar .profile-section {
+  margin-top: auto;
+  padding: 20px;
+}
+
+/* Main Content Styling */
+.content {
+  margin-left: 260px;
+  padding: 20px;
+}
+
+/* Footer Styling */
+footer {
+  text-align: center;
+  color: #888;
+  font-size: 0.9rem;
+  margin-top: 20px;
+}
