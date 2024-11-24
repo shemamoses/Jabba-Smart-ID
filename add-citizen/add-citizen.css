@@ -1,66 +1,97 @@
-/* Full-screen background */
-body,
-html {
-  height: 100%;
-  margin: 0;
-  overflow: hidden;
-  background-color: #f0f2f5;
-  font-family: Arial, sans-serif;
+/* Global Styles */
+body {
+  background-color: #36393f; /* Dark theme background */
+  color: #dcddde; /* Light text for readability */
 }
 
+h2 {
+  color: #7289da; /* Discord brand color */
+}
+
+/* Sidebar Styling */
 .sidebar {
-  width: 200px;
-  background-color: #333;
-  color: white;
+  background-color: #2f3136; /* Sidebar dark color */
+  color: #dcddde;
+  min-width: 250px;
   padding: 1rem;
-  height: 100vh;
+  border-right: 1px solid #202225;
 }
 
-.sidebar h2 {
-  color: #00aaff;
-  font-size: 1.5rem;
-  text-align: center;
-  margin-bottom: 1rem;
+.sidebar .nav-link {
+  color: #dcddde;
+  border-radius: 4px;
+  padding: 0.75rem;
+  font-weight: 500;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
-.nav-link {
-  color: #ccc;
+.sidebar .nav-link.active {
+  background-color: #7289da;
+  transform: scale(1.05);
 }
 
-.nav-link.active {
-  background-color: #00aaff;
-  color: white;
+.sidebar .nav-link:hover {
+  background-color: #5865f2;
+  transform: scale(1.05);
 }
 
-.nav-link:hover {
-  color: #00aaff;
-}
-
-.profile {
-  border-top: 1px solid #555;
-  padding-top: 1rem;
-}
-
-/* Main Content */
-.content {
-  margin-left: 260px;
-  padding: 20px;
-}
-
+/* Form Styles */
 .card {
-  margin-top: 20px;
-  padding: 20px;
-  background-color: white;
+  background-color: #40444b; /* Dark background for form */
+  border: none;
   border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
 }
 
-/* Footer styling */
-footer {
-  position: absolute;
-  bottom: 10px;
-  width: 100%;
-  text-align: center;
-  color: #888;
-  font-size: 0.9rem;
+.form-label {
+  color: #dcddde; /* Light text for labels */
+}
+
+.form-control {
+  background-color: #2f3136;
+  color: #dcddde;
+  border: 1px solid #444b53;
+}
+
+.form-control:focus {
+  background-color: #36393f;
+  border-color: #7289da;
+  color: #dcddde;
+}
+
+button {
+  background-color: #7289da;
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  font-size: 1.1rem;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #5865f2;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+textarea.form-control {
+  min-height: 150px;
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 767px) {
+  .sidebar {
+    display: none; /* Hide sidebar on mobile */
+  }
+
+  .content {
+    padding: 2rem 1rem;
+  }
+
+  .card {
+    width: 100%;
+    margin-top: 1rem;
+  }
 }

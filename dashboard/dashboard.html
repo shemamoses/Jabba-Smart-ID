@@ -32,6 +32,10 @@
         background-color: var(--discord-bg);
         color: var(--discord-text);
         font-family: "Arial", sans-serif;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        margin: 0;
       }
 
       .sidebar {
@@ -42,6 +46,9 @@
         box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
         display: flex;
         flex-direction: column;
+        position: fixed;
+        height: 100vh;
+        top: 0;
       }
 
       .sidebar h2 {
@@ -88,6 +95,7 @@
       }
 
       .main-content {
+        margin-left: 250px;
         padding: 2rem;
         flex-grow: 1;
       }
@@ -122,10 +130,31 @@
         border-radius: 50%;
         padding: 0.75rem;
       }
+
+      .table-responsive {
+        margin-top: 2rem;
+      }
+
+      .dataTables_wrapper .dataTables_filter input {
+        border-radius: 5px;
+        padding: 0.5rem;
+        margin-left: 1rem;
+        width: 200px;
+      }
+
+      .dataTables_length select {
+        border-radius: 5px;
+        padding: 0.5rem;
+        margin-left: 1rem;
+      }
+
+      .dataTables_info {
+        margin-top: 10px;
+      }
     </style>
   </head>
   <body>
-    <div class="d-flex vh-100">
+    <div class="d-flex">
       <!-- Sidebar -->
       <div class="sidebar">
         <h2>Jabaa Smart ID</h2>
@@ -174,6 +203,45 @@
 
       <!-- Main Content -->
       <div class="main-content">
+        <!-- Navbar Section -->
+        <nav
+          class="navbar navbar-expand-lg navbar-dark"
+          style="background-color: #23272a"
+        >
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Smart ID Dashboard</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">
+                    Home
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"> About </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"> Services </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"> Contact </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
         <!-- Welcome Section -->
         <div class="welcome-section">
           <h1>Welcome to Jabaa Smart ID Dashboard</h1>
@@ -190,7 +258,7 @@
           </ul>
         </div>
 
-        <!-- DataTable -->
+        <!-- DataTable with Search, Pagination, and Filter -->
         <div class="table-responsive mt-4">
           <table
             id="dataTable"
@@ -217,6 +285,12 @@
                 <td>Design</td>
                 <td>janesmith@example.com</td>
               </tr>
+              <tr>
+                <td>Emily Brown</td>
+                <td>Manager</td>
+                <td>HR</td>
+                <td>emilybrown@example.com</td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -224,25 +298,30 @@
     </div>
 
     <!-- Theme Toggle Button -->
-    <button
-      class="theme-toggle-btn"
-      onclick="toggleTheme()"
-      title="Toggle Theme"
-    >
-      <i class="fas fa-adjust"></i>
+    <button class="theme-toggle-btn" onclick="toggleTheme()">
+      <i class="fas fa-moon"></i>
     </button>
 
-    <!-- Bootstrap JS -->
+    <!-- Latest Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- DataTables JS -->
     <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap5.min.js"></script>
     <script>
+      // DataTable Initialization with Search, Pagination, and Filter
       $(document).ready(function () {
-        $("#dataTable").DataTable();
+        $("#dataTable").DataTable({
+          paging: true,
+          searching: true,
+          ordering: true,
+          info: true,
+          lengthChange: true,
+        });
       });
 
+      // Theme Toggle Function
       function toggleTheme() {
-        document.body.classList.toggle("dark-mode");
+        document.body.classList.toggle("dark-theme");
       }
     </script>
   </body>
